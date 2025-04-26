@@ -9,23 +9,23 @@ private:
     int imag;
 
 public:
-    Complex(int r = 0, int i = 0) : real(r), imag(i) {}
+    Complex(int r = 0, int i = 0) : real(r), imag(i) {} // Constructor with default arguments
 
-    Complex operator+(Complex c)
+    Complex operator+(Complex c) // Overload the + operator to add two complex numbers
     {
         Complex temp;
         temp.real = real + c.real;
         temp.imag = imag + c.imag;
         return temp;
     }
-    Complex operator-(Complex c)
+    Complex operator-(Complex c) // Overload the - operator to subtract two complex numbers
     {
         Complex temp;
         temp.real = real - c.real;
         temp.imag = imag - c.imag;
         return temp;
     }
-    friend istream &operator>>(istream &in, Complex &c)
+    friend istream &operator>>(istream &in, Complex &c) // Friend function to overload >> operator for input
     {
         cout << "Enter real part: ";
         in >> c.real;
@@ -33,7 +33,7 @@ public:
         in >> c.imag;
         return in;
     }
-    friend ostream &operator<<(ostream &out, const Complex &c)
+    friend ostream &operator<<(ostream &out, const Complex &c) // Friend function to overload << operator for output
     {
         out << c.real << " + " << c.imag << "i";
         return out;
@@ -42,6 +42,7 @@ public:
 int main()
 {
     Complex c1, c2;
+    //Take input from the user
     cout << "Enter first complex number:" << endl;
     cin >> c1;
     cout << "Enter second complex number:" << endl;
